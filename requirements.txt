@@ -1,2 +1,4 @@
+fastapi==0.68.1
+colabcode==0.3.0
 urllib3==1.25.4
 farm-haystack==0.10.0
