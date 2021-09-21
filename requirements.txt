@@ -1,0 +1,2 @@
+urllib3==1.25.4
+farm-haystack==0.10.0
