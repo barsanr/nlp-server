@@ -5,6 +5,7 @@ from business_logic import HaystackPipeline
 from models import Query, ProcessedExhibit
 from haystack.reader.farm import FARMReader
 from haystack.pipeline import ExtractiveQAPipeline
+from colabcode import ColabCode
 
 app = FastAPI()
 haystack_pipeline = HaystackPipeline()
@@ -40,3 +41,7 @@ async def predict(query: Query):
     question_dict = query.dict()
     prediction = haystack_pipeline.predict(question_dict['question'])
     return prediction
+    
+
+server = ColabCode(port=10000, code=False)
+server.run_app(app=app)
